@@ -8,14 +8,14 @@
      }
  
      if(isset($user) && isset($pass)) {
-         $query = "SELECT * FROM Picture1 WHERE id = '".$user."' ";
+         $query = "SELECT * FROM Pumps WHERE id = '".$user."' ";
          $result = mysqli_query($sqlconnection, $query);
  
          if ($result->num_rows == 0) {
              echo "Nope";
          } else {
              while($row = $result->fetch_assoc()) {
-        	 echo  $row["info"];
+        	 echo    $row["info"] . "/" .  $row["waterLevel"] ;
     		}
          }
      }
